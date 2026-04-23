@@ -3,14 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Scotia • AU Lifting Standards Quick Guide (Offline)</title>
+  <title>Exodrill • AU Lifting Standards Quick Guide (Offline)</title>
 
-  <!-- ✅ PWA SUPPORT (ADD THESE) -->
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#0b1220">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Scotia Guide">
+  <meta name="apple-mobile-web-app-title" content="Exodrill Guide">
 
   <style>
     :root {
@@ -21,8 +20,6 @@
     body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; background:var(--bg); color:var(--text); }
     header { padding:16px; border-bottom:1px solid var(--line); position:sticky; top:0; background:rgba(11,18,32,.92); backdrop-filter: blur(8px); z-index: 10; }
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 14px; }
-
-    /* Header layout with logo */
     .headbar { display:flex; align-items:center; justify-content: space-between; gap:12px; flex-wrap: wrap; }
     .brand { display:flex; align-items:center; gap:10px; min-width:0; }
     .brandTitle { min-width:0; }
@@ -39,7 +36,6 @@
     h1 { margin: 0 0 6px; font-size: 18px; font-weight: 800; letter-spacing:.2px; }
     .brandMeta { font-size: 11px; color: var(--muted); margin-top: 2px; white-space: nowrap; overflow:hidden; text-overflow: ellipsis; }
     .sub { margin:0; color:var(--muted); font-size: 13px; }
-
     .row { display:flex; gap:10px; margin-top: 12px; flex-wrap:wrap; }
     input[type="search"], input[type="text"], input[type="date"], textarea{
       width: 100%;
@@ -56,21 +52,17 @@
     button.good { background: rgba(74,222,128,.12); border-color: rgba(74,222,128,.30); }
     button.warn { background: rgba(251,191,36,.12); border-color: rgba(251,191,36,.30); }
     button.bad { background: rgba(251,113,133,.12); border-color: rgba(251,113,133,.30); }
-
     main { padding: 16px 0 30px; }
     .grid { display:grid; grid-template-columns: 1.1fr .9fr; gap: 14px; }
     @media (max-width: 980px){ .grid{ grid-template-columns: 1fr; } }
-
     .card{
       background:var(--card); border:1px solid var(--line); border-radius: 18px;
       padding: 14px;
       box-shadow: 0 10px 22px rgba(0,0,0,.25);
     }
     .card h2 { margin: 0 0 10px; font-size: 15px; }
-
     .pill { display:inline-flex; align-items:center; gap:6px; padding: 6px 10px; border-radius: 999px; border:1px solid var(--line); color:var(--muted); font-size: 12px; }
     .pill strong { color: var(--text); font-weight: 650; }
-
     .list { display:flex; flex-direction: column; gap: 10px; }
     .item {
       padding: 12px; border-radius: 16px; border:1px solid var(--line);
@@ -83,7 +75,6 @@
     .item .name { font-weight: 750; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .item .cat { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .desc { color: var(--muted); font-size: 12px; margin-top: 6px; line-height: 1.35; }
-
     .chips{ margin-top: 8px; display:flex; flex-wrap: wrap; gap: 6px; }
     .chip { font-size: 12px; color: var(--text); border:1px solid var(--line); padding: 5px 8px; border-radius: 999px; background: rgba(106,167,255,.08); }
     .chip.secondary { background: rgba(147,164,199,.08); color: var(--muted); }
@@ -96,8 +87,6 @@
     .tag.related { color: var(--accent); border-color: rgba(106,167,255,.35); background: rgba(106,167,255,.06); }
     .small { font-size: 11px; color: var(--muted); }
     .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; border:1px solid var(--line); padding: 2px 6px; border-radius: 8px; background: rgba(255,255,255,.04); }
-
-    /* Icons */
     .icon {
       width: 44px; height: 44px;
       display:grid; place-items:center;
@@ -108,8 +97,6 @@
       flex: 0 0 auto;
     }
     .icon svg { width: 30px; height: 30px; }
-
-    /* Inspection UI */
     .tabs { display:flex; gap:8px; flex-wrap: wrap; }
     .tabs button { padding: 10px 10px; }
     .tabs button.active { background: rgba(106,167,255,.18); border-color: rgba(106,167,255,.45); }
@@ -130,31 +117,28 @@
   <div class="wrap">
     <div class="headbar">
       <div class="brand">
-        <div class="logoBox" title="Scotia">
+        <div class="logoBox" title="Exodrill">
           <svg viewBox="0 0 64 64" aria-hidden="true">
             <defs>
-              <linearGradient id="scotiaRed" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#ff4d6d"/>
-                <stop offset="1" stop-color="#d90429"/>
+              <linearGradient id="exoGreen" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#22c55e"/>
+                <stop offset="1" stop-color="#15803d"/>
               </linearGradient>
             </defs>
-            <circle cx="32" cy="32" r="24" fill="url(#scotiaRed)"/>
-            <path d="M40 22c-2.4-3-6.7-4.6-11-3.8-4.2.7-7.4 3.2-7.8 6.4-.5 3.8 3.2 5.6 7.2 6.6 4.8 1.2 9.7 2.6 9.1 7.1-.6 4.3-5.2 7.2-11.2 7.2-4.4 0-8.1-1.4-10.2-4"
-                  fill="none" stroke="#ffffff" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="32" cy="32" r="24" fill="url(#exoGreen)"/>
+            <text x="32" y="42" text-anchor="middle" font-family="system-ui, -apple-system, Arial, sans-serif" font-size="28" font-weight="900" fill="#ffffff">E</text>
           </svg>
         </div>
         <div class="brandTitle">
           <h1>AU Lifting Standards Quick Guide <span class="pill" title="No internet required"><strong>Offline</strong></span></h1>
-          <div class="brandMeta">Scotia • Inspector quick reference + inspection records</div>
+          <div class="brandMeta">Exodrill • Inspector quick reference + inspection records</div>
         </div>
       </div>
-
       <div class="tabs" role="tablist" aria-label="Modes">
         <button id="tabGuide" class="active" type="button">Guide</button>
         <button id="tabHistory" type="button">History</button>
       </div>
     </div>
-
     <p class="sub">Search an item (e.g., <span class="kbd">shackle</span>, <span class="kbd">round sling</span>, <span class="kbd">spreader beam</span>, <span class="kbd">MEWP</span>) → view standards + save inspection records offline.</p>
     <div class="row">
       <input id="q" type="search" placeholder="Search item or standard (e.g., shackle, AS/NZS 2741, chain sling, eyebolt)" autofocus />
@@ -172,21 +156,18 @@
         <h2>Results</h2>
         <span class="small" id="count"></span>
       </div>
-      <div class="muted">Tip: Use common terms. Synonyms are built in (e.g., “bow shackle”, “D shackle”).</div>
+      <div class="muted">Tip: Use common terms. Synonyms are built in (e.g., "bow shackle", "D shackle").</div>
       <div class="hr"></div>
       <div id="results" class="list"></div>
     </section>
-
     <aside class="card">
       <div class="sectionTitle">
         <h2>Details</h2>
         <span class="small" id="selectedHint">Select an item</span>
       </div>
-
       <div id="details" class="muted">
         Select a result to see mapped standards and quick prompts. You can also create an inspection record.
       </div>
-
       <div class="hr"></div>
       <div class="small">
         Notes:
@@ -197,7 +178,6 @@
       </div>
     </aside>
   </div>
-
   <div class="grid" id="historyView" style="display:none;">
     <section class="card">
       <div class="sectionTitle">
@@ -211,7 +191,6 @@
       </div>
       <div id="historyList" class="list"></div>
     </section>
-
     <aside class="card">
       <h2>Record</h2>
       <div id="historyDetails" class="muted">Select a record to view details.</div>
@@ -222,7 +201,6 @@
 </main>
 
 <script>
-/* ---------- Inline SVG icons ---------- */
 function iconSVG(kind){
   const common = `fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"`;
   const wrap = (inner) => `<svg viewBox="0 0 48 48" aria-hidden="true"><g ${common}>${inner}</g></svg>`;
@@ -253,21 +231,14 @@ function iconSVG(kind){
 }
 function itemIconKind(itemId){
   const map = {
-    item_shackle: "shackle",
-    item_eyebolt: "eyebolt",
-    item_chain_sling: "chainSling",
-    item_webbing_sling: "webbingSling",
-    item_round_sling: "roundSling",
-    item_wire_rope_sling: "wireRopeSling",
-    item_spreader_beam: "spreaderBeam",
-    item_vacuum_lifter: "vacuumLifter",
-    item_crane_general: "crane",
-    item_mewp: "mewp",
+    item_shackle:"shackle", item_eyebolt:"eyebolt", item_chain_sling:"chainSling",
+    item_webbing_sling:"webbingSling", item_round_sling:"roundSling",
+    item_wire_rope_sling:"wireRopeSling", item_spreader_beam:"spreaderBeam",
+    item_vacuum_lifter:"vacuumLifter", item_crane_general:"crane", item_mewp:"mewp",
   };
   return map[itemId] || "default";
 }
 
-/* ---------- Data (seed) ---------- */
 const STANDARDS = [
   { id:"as1418", code:"AS 1418 series", title:"Cranes (including hoists and winches)", year:"(series)", status:"current", tags:["cranes","hoists","winches","design"], summary:"Design/manufacture requirements for cranes, hoists and winches (series). Use for equipment design/spec context; pair with AS 2550 for safe use." },
   { id:"as2550", code:"AS 2550 series", title:"Cranes, hoists and winches — Safe use", year:"(series)", status:"current", tags:["safe use","operations","inspection"], summary:"Safe use guidance for cranes, hoists and winches (series). Includes parts for different crane types and mobile elevating work platforms in the series." },
@@ -282,594 +253,167 @@ const STANDARDS = [
 ];
 
 const ITEMS = [
-  { id:"item_shackle", name:"Shackle",
-    description:"Removable U-shaped connector with a pin, used to join slings, lifting points and hardware to a load or lifting device.",
-    category:"Hardware / Rigging",
-    synonyms:["bow shackle","d shackle","dee shackle","anchor shackle","g209","g2130","shackles"],
-    standards:[{ sid:"as2741", rel:"primary", note:"Use for selection, marking/ID, WLL and serviceability checks." },{ sid:"as2550", rel:"related", note:"Safe-use context (sling angles, rigging practices) for lifting operations." }],
-    prompts:["Verify WLL/size/ID markings are legible.","Inspect pin threads/shoulder, body wear, deformation, cracks, corrosion.","Confirm correct pin installed; no mismatch of pin/body.","Check side-loading risk; ensure alignment with load line."] },
-  { id:"item_eyebolt", name:"Eyebolt / Eye nut (collared lifting)",
-    description:"Threaded lifting point with an eye and collar designed for lifting loads when correctly seated and loaded as intended.",
-    category:"Hardware / Rigging",
-    synonyms:["eyebolt","eye bolt","eye nut","lifting point","hoist ring (generic search)"],
-    standards:[{ sid:"as2317", rel:"primary", note:"Collared eyebolt requirements and safe loading prompts." },{ sid:"as2550", rel:"related", note:"Safe-use guidance when integrating into lifts and rigging plans." }],
-    prompts:["Confirm correct type (collared lifting), thread size/pitch and full engagement.","Ensure collar seats flush; no packing unless approved.","Check deformation, cracks, thread damage, corrosion.","Confirm loading direction and any angular load limits."] },
-  { id:"item_chain_sling", name:"Chain sling",
-    description:"Grade-rated chain assembly (single/multi-leg) with fittings such as master links and hooks for lifting loads.",
-    category:"Slings",
-    synonyms:["grade 80 chain sling","g80 chain sling","grade 100 chain sling","g100 chain sling","chain slings"],
-    standards:[{ sid:"as3775", rel:"primary", note:"Chain sling requirements + guidance." },{ sid:"as3776", rel:"related", note:"Component requirements for chain sling assemblies." },{ sid:"as2550", rel:"related", note:"Safe use: sling angles, hitch types, lift planning." }],
-    prompts:["Verify tag/marking: grade, WLL, legs, manufacturer/ID.","Inspect links for wear, elongation, gouges/nicks, heat damage, corrosion.","Inspect hooks: latch, throat opening, twist, cracks; check master links/connectors.","Remove from service if damage exceeds criteria per procedure."] },
-  { id:"item_webbing_sling", name:"Webbing sling (flat synthetic)",
-    description:"Flat woven synthetic sling used in vertical, choke or basket hitches; sensitive to cuts, abrasion, heat and chemicals.",
-    category:"Slings",
-    synonyms:["web sling","webbing slings","polyester sling","flat sling","duplex sling","endless webbing sling"],
-    standards:[{ sid:"as1353", rel:"primary", note:"Flat webbing sling requirements + care/use guidance." },{ sid:"as2550", rel:"related", note:"Safe use: choking/basket, edge protection, angles." }],
-    prompts:["Check label/tag legible (WLL, material, length, ID).","Inspect cuts/tears/abrasion, broken stitching, UV/chemical damage, heat glazing.","Confirm edge protection where sharp edges exist.","Quarantine if damage present; follow discard criteria."] },
-  { id:"item_round_sling", name:"Round sling (synthetic fibre)",
-    description:"Synthetic fibre sling with a load-bearing core and protective cover; typically endless or with fittings; requires edge protection.",
-    category:"Slings",
-    synonyms:["round sling","endless sling","polyester roundsling","synthetic roundsling","soft sling"],
-    standards:[{ sid:"as4497", rel:"primary", note:"Synthetic fibre roundsling requirements + inspection prompts." },{ sid:"as2550", rel:"related", note:"Safe use: edge protection, angles, hitch selection." }],
-    prompts:["Check tag: WLL, colour coding, length, manufacturer/ID.","Inspect cover for cuts/tears/abrasion; feel for core damage (lumps/flat spots).","Use edge protection on sharp edges; avoid chemicals/heat.","Quarantine if cover damage suggests core compromise."] },
-  { id:"item_wire_rope_sling", name:"Wire-rope sling",
-    description:"Steel wire-rope sling with terminations (spliced, swaged, thimbles). Used for rugged lifting but prone to broken wires/corrosion/kinks.",
-    category:"Slings",
-    synonyms:["wire rope sling","wire-rope slings","flemish eye sling","thimble eye sling","swaged sling"],
-    standards:[{ sid:"as1666", rel:"primary", note:"Wire-rope sling requirements + care/use guidance." },{ sid:"as2550", rel:"related", note:"Safe use context for sling selection and lift planning." }],
-    prompts:["Check broken wires, birdcaging, kinks, crushing, corrosion.","Inspect terminations: thimbles, ferrules, splices; check slippage/damage.","Confirm tag/ID and WLL appropriate for hitch configuration.","Remove from service if deterioration exceeds criteria."] },
-  { id:"item_spreader_beam", name:"Spreader beam / Lifting beam",
-    description:"Below-the-hook device to distribute load and control sling angles; spreader beams load mainly in compression, lifting beams in bending.",
-    category:"Lifting devices (below-the-hook)",
-    synonyms:["spreader","spreader bar","lifting beam","lifting frame","lifting yoke","below the hook"],
-    standards:[{ sid:"as4991", rel:"primary", note:"Lifting devices attachable to the hook." },{ sid:"as2550", rel:"related", note:"Safe use context for integrating into lifting operations." }],
-    prompts:["Verify markings: WLL, ID/serial, inspection status.","Inspect welds, lugs/padeyes, load points, deformation, cracks, corrosion.","Check pins/retainers and attachments used with the device.","Confirm configuration matches rated mode (spreader vs lifting beam)."] },
-  { id:"item_vacuum_lifter", name:"Vacuum lifter",
-    description:"Below-the-hook lifting device using vacuum pads to lift plates/panels; needs functional checks, alarms and adequate vacuum reserve.",
-    category:"Lifting devices (below-the-hook)",
-    synonyms:["vacuum lifter","vacuum lifting device","suction lifter (industrial)"],
-    standards:[{ sid:"as4991", rel:"primary", note:"Lifting device requirements (marking/testing/use guidance)." },{ sid:"as2550", rel:"related", note:"Safe use: pre-use checks, controls and exclusion zones." }],
-    prompts:["Check pads/seals, hoses, valves, gauges, alarms and vacuum reserve.","Verify WLL for the material/surface and lifting orientation.","Confirm power/backup systems and drop-prevention features where applicable.","Perform pre-lift function tests per procedure."] },
-  { id:"item_crane_general", name:"Cranes / Hoists / Winches (general)",
-    description:"Lifting plant used to raise/lower and move loads. Includes overhead cranes, mobile cranes, electric/chain hoists and winches.",
-    category:"Plant",
-    synonyms:["crane","hoist","winch","electric hoist","chain hoist (hand)","wire rope hoist"],
-    standards:[{ sid:"as1418", rel:"primary", note:"Design/manufacture series for cranes/hoists/winches." },{ sid:"as2550", rel:"primary", note:"Safe use series for cranes/hoists/winches." }],
-    prompts:["Confirm inspection intervals and records (pre-start, periodic, major).","Check limit switches, brakes, hooks, ropes/chains, controls and emergency stops.","Verify rated capacity charts and signage are legible.","Inspect structural members for cracks/corrosion and abnormal wear."] },
-  { id:"item_mewp", name:"MEWP (EWP / boom lift / scissor lift)",
-    description:"Mobile elevating work platform used to lift personnel. Includes scissor lifts and boom-type EWPs with platform SWL and wind limits.",
-    category:"Plant",
-    synonyms:["mewp","ewp","elevating work platform","boom lift","scissor lift","cherry picker"],
-    standards:[{ sid:"as2550", rel:"primary", note:"Safe use series includes a MEWP part within AS 2550." }],
-    prompts:["Check pre-start: controls, emergency lowering, alarms, tyres/tracks, leaks.","Verify SWL/platform rating and any wind limits.","Confirm harness/lanyard requirements for boom-type MEWPs per site rules.","Review maintenance/inspection records and safety notices."] },
+  { id:"item_shackle", name:"Shackle", description:"Removable U-shaped connector with a pin, used to join slings, lifting points and hardware to a load or lifting device.", category:"Hardware / Rigging", synonyms:["bow shackle","d shackle","dee shackle","anchor shackle","g209","g2130","shackles"], standards:[{ sid:"as2741", rel:"primary", note:"Use for selection, marking/ID, WLL and serviceability checks." },{ sid:"as2550", rel:"related", note:"Safe-use context (sling angles, rigging practices) for lifting operations." }], prompts:["Verify WLL/size/ID markings are legible.","Inspect pin threads/shoulder, body wear, deformation, cracks, corrosion.","Confirm correct pin installed; no mismatch of pin/body.","Check side-loading risk; ensure alignment with load line."] },
+  { id:"item_eyebolt", name:"Eyebolt / Eye nut (collared lifting)", description:"Threaded lifting point with an eye and collar designed for lifting loads when correctly seated and loaded as intended.", category:"Hardware / Rigging", synonyms:["eyebolt","eye bolt","eye nut","lifting point","hoist ring (generic search)"], standards:[{ sid:"as2317", rel:"primary", note:"Collared eyebolt requirements and safe loading prompts." },{ sid:"as2550", rel:"related", note:"Safe-use guidance when integrating into lifts and rigging plans." }], prompts:["Confirm correct type (collared lifting), thread size/pitch and full engagement.","Ensure collar seats flush; no packing unless approved.","Check deformation, cracks, thread damage, corrosion.","Confirm loading direction and any angular load limits."] },
+  { id:"item_chain_sling", name:"Chain sling", description:"Grade-rated chain assembly (single/multi-leg) with fittings such as master links and hooks for lifting loads.", category:"Slings", synonyms:["grade 80 chain sling","g80 chain sling","grade 100 chain sling","g100 chain sling","chain slings"], standards:[{ sid:"as3775", rel:"primary", note:"Chain sling requirements + guidance." },{ sid:"as3776", rel:"related", note:"Component requirements for chain sling assemblies." },{ sid:"as2550", rel:"related", note:"Safe use: sling angles, hitch types, lift planning." }], prompts:["Verify tag/marking: grade, WLL, legs, manufacturer/ID.","Inspect links for wear, elongation, gouges/nicks, heat damage, corrosion.","Inspect hooks: latch, throat opening, twist, cracks; check master links/connectors.","Remove from service if damage exceeds criteria per procedure."] },
+  { id:"item_webbing_sling", name:"Webbing sling (flat synthetic)", description:"Flat woven synthetic sling used in vertical, choke or basket hitches; sensitive to cuts, abrasion, heat and chemicals.", category:"Slings", synonyms:["web sling","webbing slings","polyester sling","flat sling","duplex sling","endless webbing sling"], standards:[{ sid:"as1353", rel:"primary", note:"Flat webbing sling requirements + care/use guidance." },{ sid:"as2550", rel:"related", note:"Safe use: choking/basket, edge protection, angles." }], prompts:["Check label/tag legible (WLL, material, length, ID).","Inspect cuts/tears/abrasion, broken stitching, UV/chemical damage, heat glazing.","Confirm edge protection where sharp edges exist.","Quarantine if damage present; follow discard criteria."] },
+  { id:"item_round_sling", name:"Round sling (synthetic fibre)", description:"Synthetic fibre sling with a load-bearing core and protective cover; typically endless or with fittings; requires edge protection.", category:"Slings", synonyms:["round sling","endless sling","polyester roundsling","synthetic roundsling","soft sling"], standards:[{ sid:"as4497", rel:"primary", note:"Synthetic fibre roundsling requirements + inspection prompts." },{ sid:"as2550", rel:"related", note:"Safe use: edge protection, angles, hitch selection." }], prompts:["Check tag: WLL, colour coding, length, manufacturer/ID.","Inspect cover for cuts/tears/abrasion; feel for core damage (lumps/flat spots).","Use edge protection on sharp edges; avoid chemicals/heat.","Quarantine if cover damage suggests core compromise."] },
+  { id:"item_wire_rope_sling", name:"Wire-rope sling", description:"Steel wire-rope sling with terminations (spliced, swaged, thimbles). Used for rugged lifting but prone to broken wires/corrosion/kinks.", category:"Slings", synonyms:["wire rope sling","wire-rope slings","flemish eye sling","thimble eye sling","swaged sling"], standards:[{ sid:"as1666", rel:"primary", note:"Wire-rope sling requirements + care/use guidance." },{ sid:"as2550", rel:"related", note:"Safe use context for sling selection and lift planning." }], prompts:["Check broken wires, birdcaging, kinks, crushing, corrosion.","Inspect terminations: thimbles, ferrules, splices; check slippage/damage.","Confirm tag/ID and WLL appropriate for hitch configuration.","Remove from service if deterioration exceeds criteria."] },
+  { id:"item_spreader_beam", name:"Spreader beam / Lifting beam", description:"Below-the-hook device to distribute load and control sling angles; spreader beams load mainly in compression, lifting beams in bending.", category:"Lifting devices (below-the-hook)", synonyms:["spreader","spreader bar","lifting beam","lifting frame","lifting yoke","below the hook"], standards:[{ sid:"as4991", rel:"primary", note:"Lifting devices attachable to the hook." },{ sid:"as2550", rel:"related", note:"Safe use context for integrating into lifting operations." }], prompts:["Verify markings: WLL, ID/serial, inspection status.","Inspect welds, lugs/padeyes, load points, deformation, cracks, corrosion.","Check pins/retainers and attachments used with the device.","Confirm configuration matches rated mode (spreader vs lifting beam)."] },
+  { id:"item_vacuum_lifter", name:"Vacuum lifter", description:"Below-the-hook lifting device using vacuum pads to lift plates/panels; needs functional checks, alarms and adequate vacuum reserve.", category:"Lifting devices (below-the-hook)", synonyms:["vacuum lifter","vacuum lifting device","suction lifter (industrial)"], standards:[{ sid:"as4991", rel:"primary", note:"Lifting device requirements (marking/testing/use guidance)." },{ sid:"as2550", rel:"related", note:"Safe use: pre-use checks, controls and exclusion zones." }], prompts:["Check pads/seals, hoses, valves, gauges, alarms and vacuum reserve.","Verify WLL for the material/surface and lifting orientation.","Confirm power/backup systems and drop-prevention features where applicable.","Perform pre-lift function tests per procedure."] },
+  { id:"item_crane_general", name:"Cranes / Hoists / Winches (general)", description:"Lifting plant used to raise/lower and move loads. Includes overhead cranes, mobile cranes, electric/chain hoists and winches.", category:"Plant", synonyms:["crane","hoist","winch","electric hoist","chain hoist (hand)","wire rope hoist"], standards:[{ sid:"as1418", rel:"primary", note:"Design/manufacture series for cranes/hoists/winches." },{ sid:"as2550", rel:"primary", note:"Safe use series for cranes/hoists/winches." }], prompts:["Confirm inspection intervals and records (pre-start, periodic, major).","Check limit switches, brakes, hooks, ropes/chains, controls and emergency stops.","Verify rated capacity charts and signage are legible.","Inspect structural members for cracks/corrosion and abnormal wear."] },
+  { id:"item_mewp", name:"MEWP (EWP / boom lift / scissor lift)", description:"Mobile elevating work platform used to lift personnel. Includes scissor lifts and boom-type EWPs with platform SWL and wind limits.", category:"Plant", synonyms:["mewp","ewp","elevating work platform","boom lift","scissor lift","cherry picker"], standards:[{ sid:"as2550", rel:"primary", note:"Safe use series includes a MEWP part within AS 2550." }], prompts:["Check pre-start: controls, emergency lowering, alarms, tyres/tracks, leaks.","Verify SWL/platform rating and any wind limits.","Confirm harness/lanyard requirements for boom-type MEWPs per site rules.","Review maintenance/inspection records and safety notices."] },
 ];
 
 const STANDARD_BY_ID = Object.fromEntries(STANDARDS.map(s => [s.id, s]));
 const ITEM_BY_ID = Object.fromEntries(ITEMS.map(i => [i.id, i]));
 
-/* ---------- Search ---------- */
-function normalize(s){
-  return (s || "").toLowerCase().replace(/[^a-z0-9\/\s\-]/g," ").replace(/\s+/g," ").trim();
-}
-function scoreMatch(query, text){
-  const q = normalize(query);
-  const t = normalize(text);
-  if (!q) return 0;
-  if (t === q) return 100;
-  if (t.includes(q)) return 70;
-  const qt = q.split(" ").filter(Boolean);
-  let tokenHits = 0;
-  for (const tok of qt){
-    if (tok.length < 2) continue;
-    if (t.includes(tok)) tokenHits += 1;
-  }
-  const tokenScore = Math.min(40, tokenHits * 10);
-  const prefixScore = t.startsWith(q) ? 20 : 0;
-  return tokenScore + prefixScore;
-}
-function itemSearch(query){
-  const q = normalize(query);
-  if (!q) return ITEMS.map(i => ({type:"item", item:i, score:0}));
-  const results = [];
-  for (const item of ITEMS){
-    let best = Math.max(scoreMatch(q, item.name), scoreMatch(q, item.description || ""));
-    for (const syn of item.synonyms) best = Math.max(best, scoreMatch(q, syn));
-    for (const m of item.standards){
-      const st = STANDARD_BY_ID[m.sid];
-      if (st) best = Math.max(best, scoreMatch(q, st.code + " " + st.title));
-    }
-    if (best > 0) results.push({type:"item", item, score:best});
-  }
-  results.sort((a,b) => b.score - a.score || a.item.name.localeCompare(b.item.name));
-  return results;
-}
-function standardsSearch(query){
-  const q = normalize(query);
-  if (!q) return [];
-  const out = [];
-  for (const st of STANDARDS){
-    const s = Math.max(scoreMatch(q, st.code), scoreMatch(q, st.title), scoreMatch(q, (st.tags||[]).join(" ")), scoreMatch(q, st.summary));
-    if (s > 0) out.push({type:"standard", standard:st, score:s});
-  }
-  out.sort((a,b) => b.score - a.score || a.standard.code.localeCompare(b.standard.code));
-  return out;
-}
+function normalize(s){ return (s||"").toLowerCase().replace(/[^a-z0-9\/\s\-]/g," ").replace(/\s+/g," ").trim(); }
+function scoreMatch(query,text){ const q=normalize(query),t=normalize(text); if(!q)return 0; if(t===q)return 100; if(t.includes(q))return 70; const qt=q.split(" ").filter(Boolean); let h=0; for(const tok of qt){if(tok.length<2)continue;if(t.includes(tok))h+=1;} return Math.min(40,h*10)+(t.startsWith(q)?20:0); }
+function itemSearch(query){ const q=normalize(query); if(!q)return ITEMS.map(i=>({type:"item",item:i,score:0})); const r=[]; for(const item of ITEMS){let b=Math.max(scoreMatch(q,item.name),scoreMatch(q,item.description||"")); for(const s of item.synonyms)b=Math.max(b,scoreMatch(q,s)); for(const m of item.standards){const st=STANDARD_BY_ID[m.sid];if(st)b=Math.max(b,scoreMatch(q,st.code+" "+st.title));} if(b>0)r.push({type:"item",item,score:b});} r.sort((a,b)=>b.score-a.score||a.item.name.localeCompare(b.item.name)); return r; }
+function standardsSearch(query){ const q=normalize(query); if(!q)return []; const o=[]; for(const st of STANDARDS){const s=Math.max(scoreMatch(q,st.code),scoreMatch(q,st.title),scoreMatch(q,(st.tags||[]).join(" ")),scoreMatch(q,st.summary));if(s>0)o.push({type:"standard",standard:st,score:s});} o.sort((a,b)=>b.score-a.score||a.standard.code.localeCompare(b.standard.code)); return o; }
 
-/* ---------- Inspection storage ---------- */
-const STORAGE_KEY = "scotia_ndt_inspections_v1";
-function loadRecords(){
-  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"); } catch { return []; }
-}
-function saveRecords(records){
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
-}
+const STORAGE_KEY = "exodrill_ndt_inspections_v1";
+function loadRecords(){ try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||"[]");}catch{return [];} }
+function saveRecords(r){ localStorage.setItem(STORAGE_KEY,JSON.stringify(r)); }
 function nowISO(){ return new Date().toISOString(); }
-function fmtLocal(iso){
-  try { return new Date(iso).toLocaleString(); } catch { return iso; }
-}
-function statusClass(status){
-  if (status === "PASS") return "status-pass";
-  if (status === "QUARANTINE") return "status-quarantine";
-  if (status === "FAIL") return "status-fail";
-  return "";
-}
-function escapeCSV(s){
-  const v = (s ?? "").toString();
-  if (/[",\n]/.test(v)) return `"${v.replace(/"/g,'""')}"`;
-  return v;
-}
+function fmtLocal(iso){ try{return new Date(iso).toLocaleString();}catch{return iso;} }
+function statusClass(s){ if(s==="PASS")return"status-pass"; if(s==="QUARANTINE")return"status-quarantine"; if(s==="FAIL")return"status-fail"; return""; }
+function escapeCSV(s){ const v=(s??"").toString(); if(/[",\n]/.test(v))return`"${v.replace(/"/g,'""')}"`; return v; }
 
-/* ---------- UI rendering ---------- */
 let selectedItemId = null;
 
 function renderResults(list){
-  const el = document.getElementById("results");
-  el.innerHTML = "";
-  if (!list.length){
-    el.innerHTML = `<div class="muted">No matches. Try: <span class="kbd">shackle</span>, <span class="kbd">AS 4991</span>, <span class="kbd">webbing sling</span>, <span class="kbd">MEWP</span>.</div>`;
-    return;
-  }
-  for (const r of list){
-    if (r.type === "item"){
-      const item = r.item;
-      const div = document.createElement("div");
-      div.className = "item";
-      div.tabIndex = 0;
-      const kind = itemIconKind(item.id);
-      div.innerHTML = `
-        <div class="top">
-          <div class="left">
-            <div class="icon" title="${item.name}">${iconSVG(kind)}</div>
-            <div style="min-width:0">
-              <div class="name">${item.name}</div>
-              <div class="cat">${item.category}</div>
-            </div>
-          </div>
-          <div class="score">match ${r.score}</div>
-        </div>
-        <div class="desc">${item.description || ""}</div>
-        <div class="chips">
-          ${item.standards.slice(0,4).map(m => {
-            const st = STANDARD_BY_ID[m.sid];
-            const cls = m.rel === "primary" ? "chip" : "chip secondary";
-            return `<span class="${cls}">${st ? st.code : m.sid}</span>`;
-          }).join("")}
-          ${item.standards.length > 4 ? `<span class="chip secondary">+${item.standards.length-4} more</span>` : ""}
-        </div>
-      `;
-      div.addEventListener("click", () => showItem(item));
-      div.addEventListener("keydown", (e) => { if(e.key==="Enter") showItem(item); });
-      el.appendChild(div);
+  const el=document.getElementById("results"); el.innerHTML="";
+  if(!list.length){el.innerHTML=`<div class="muted">No matches. Try: <span class="kbd">shackle</span>, <span class="kbd">AS 4991</span>, <span class="kbd">webbing sling</span>, <span class="kbd">MEWP</span>.</div>`;return;}
+  for(const r of list){
+    if(r.type==="item"){
+      const item=r.item,div=document.createElement("div"); div.className="item"; div.tabIndex=0;
+      const kind=itemIconKind(item.id);
+      div.innerHTML=`<div class="top"><div class="left"><div class="icon" title="${item.name}">${iconSVG(kind)}</div><div style="min-width:0"><div class="name">${item.name}</div><div class="cat">${item.category}</div></div></div><div class="score">match ${r.score}</div></div><div class="desc">${item.description||""}</div><div class="chips">${item.standards.slice(0,4).map(m=>{const st=STANDARD_BY_ID[m.sid];return`<span class="${m.rel==="primary"?"chip":"chip secondary"}">${st?st.code:m.sid}</span>`;}).join("")}${item.standards.length>4?`<span class="chip secondary">+${item.standards.length-4} more</span>`:""}</div>`;
+      div.addEventListener("click",()=>showItem(item)); div.addEventListener("keydown",(e)=>{if(e.key==="Enter")showItem(item);}); el.appendChild(div);
     } else {
-      const st = r.standard;
-      const div = document.createElement("div");
-      div.className = "item";
-      div.tabIndex = 0;
-      div.innerHTML = `
-        <div class="top">
-          <div class="left">
-            <div class="icon" title="Standard">${iconSVG("default")}</div>
-            <div style="min-width:0">
-              <div class="name">${st.code}</div>
-              <div class="cat">${st.title}</div>
-            </div>
-          </div>
-          <div class="score">match ${r.score}</div>
-        </div>
-        <div class="desc">${st.summary}</div>
-      `;
-      div.addEventListener("click", () => showStandard(st));
-      div.addEventListener("keydown", (e) => { if(e.key==="Enter") showStandard(st); });
-      el.appendChild(div);
+      const st=r.standard,div=document.createElement("div"); div.className="item"; div.tabIndex=0;
+      div.innerHTML=`<div class="top"><div class="left"><div class="icon" title="Standard">${iconSVG("default")}</div><div style="min-width:0"><div class="name">${st.code}</div><div class="cat">${st.title}</div></div></div><div class="score">match ${r.score}</div></div><div class="desc">${st.summary}</div>`;
+      div.addEventListener("click",()=>showStandard(st)); div.addEventListener("keydown",(e)=>{if(e.key==="Enter")showStandard(st);}); el.appendChild(div);
     }
   }
 }
 
 function showItem(item){
-  selectedItemId = item.id;
-  document.getElementById("selectedHint").textContent = "Item selected";
-  const d = document.getElementById("details");
-  const primary = item.standards.filter(s => s.rel === "primary");
-  const related = item.standards.filter(s => s.rel !== "primary");
-  const kind = itemIconKind(item.id);
-
-  const stdLine = (m) => {
-    const st = STANDARD_BY_ID[m.sid];
-    const code = st ? st.code : m.sid;
-    const title = st ? st.title : "";
-    return `
-      <div style="margin:10px 0; padding:10px; border:1px solid var(--line); border-radius:14px; background: rgba(255,255,255,.03);">
-        <div style="display:flex; justify-content:space-between; gap:10px; align-items:center;">
-          <div><b>${code}</b> <span class="small">— ${title}</span></div>
-          <span class="tag ${m.rel === "primary" ? "primary" : "related"}">${m.rel}</span>
-        </div>
-        <div class="muted" style="margin-top:6px">${m.note || ""}</div>
-        ${st ? `<div class="small" style="margin-top:6px">Summary: ${st.summary}</div>` : ""}
-      </div>
-    `;
-  };
-
-  d.innerHTML = `
-    <div style="display:flex; gap:12px; align-items:center;">
-      <div class="icon">${iconSVG(kind)}</div>
-      <div>
-        <div style="font-size:16px; font-weight:800;">${item.name}</div>
-        <div class="small">${item.category}</div>
-      </div>
-    </div>
-
-    <div class="desc" style="margin-top:10px">${item.description || ""}</div>
-
-    <div class="hr"></div>
-    <div style="font-weight:800;">Inspection Mode</div>
-    <div class="muted">Create a record for this item. Saved locally on this device.</div>
-
-    <div class="formGrid" style="margin-top:10px;">
-      <div class="field">
-        <label>Inspector name</label>
-        <input id="inspectorName" type="text" placeholder="e.g., J. Smith" />
-      </div>
-      <div class="field">
-        <label>Site / client</label>
-        <input id="siteName" type="text" placeholder="e.g., Kwinana • Tank Farm" />
-      </div>
-      <div class="field">
-        <label>Asset ID / serial / tag</label>
-        <input id="assetId" type="text" placeholder="e.g., SHK-01492" />
-      </div>
-      <div class="field">
-        <label>Location / area</label>
-        <input id="location" type="text" placeholder="e.g., Laydown yard bay 3" />
-      </div>
-      <div class="field">
-        <label>Date (optional)</label>
-        <input id="inspDate" type="date" />
-      </div>
-      <div class="field">
-        <label>Job / work order (optional)</label>
-        <input id="workOrder" type="text" placeholder="e.g., WO-88214" />
-      </div>
-    </div>
-
-    <div class="field" style="margin-top:6px;">
-      <label>Notes</label>
-      <textarea id="notes" placeholder="What did you observe? Measurements? Damage location? Actions taken?"></textarea>
-    </div>
-
-    <div class="actions">
-      <button class="good" type="button" onclick="saveInspection('PASS')">PASS</button>
-      <button class="warn" type="button" onclick="saveInspection('QUARANTINE')">QUARANTINE</button>
-      <button class="bad" type="button" onclick="saveInspection('FAIL')">FAIL</button>
-      <button type="button" onclick="prefillFromLast()">Prefill from last</button>
-    </div>
-
-    <div class="hr"></div>
-    <div style="font-weight:700; margin-bottom:6px;">Primary standards</div>
-    ${primary.length ? primary.map(stdLine).join("") : `<div class="muted">None mapped yet.</div>`}
-
-    <div style="font-weight:700; margin:12px 0 6px;">Related standards</div>
-    ${related.length ? related.map(stdLine).join("") : `<div class="muted">None.</div>`}
-
-    <div class="hr"></div>
-    <div style="font-weight:700; margin-bottom:6px;">Quick inspection prompts</div>
-    <ul style="margin: 8px 0 0 18px;">
-      ${(item.prompts || []).map(p => `<li>${p}</li>`).join("")}
-    </ul>
-
-    <div class="hr"></div>
-    <div class="small">Synonyms: ${(item.synonyms || []).map(s => `<span class="kbd">${s}</span>`).join(" ")}</div>
-  `;
+  selectedItemId=item.id; document.getElementById("selectedHint").textContent="Item selected";
+  const d=document.getElementById("details"),primary=item.standards.filter(s=>s.rel==="primary"),related=item.standards.filter(s=>s.rel!=="primary"),kind=itemIconKind(item.id);
+  const stdLine=(m)=>{const st=STANDARD_BY_ID[m.sid],code=st?st.code:m.sid,title=st?st.title:"";return`<div style="margin:10px 0;padding:10px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.03)"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><div><b>${code}</b> <span class="small">— ${title}</span></div><span class="tag ${m.rel==="primary"?"primary":"related"}">${m.rel}</span></div><div class="muted" style="margin-top:6px">${m.note||""}</div>${st?`<div class="small" style="margin-top:6px">Summary: ${st.summary}</div>`:""}</div>`;};
+  d.innerHTML=`<div style="display:flex;gap:12px;align-items:center"><div class="icon">${iconSVG(kind)}</div><div><div style="font-size:16px;font-weight:800">${item.name}</div><div class="small">${item.category}</div></div></div><div class="desc" style="margin-top:10px">${item.description||""}</div><div class="hr"></div><div style="font-weight:800">Inspection Mode</div><div class="muted">Create a record for this item. Saved locally on this device.</div><div class="formGrid" style="margin-top:10px"><div class="field"><label>Inspector name</label><input id="inspectorName" type="text" placeholder="e.g., J. Smith"/></div><div class="field"><label>Site / client</label><input id="siteName" type="text" placeholder="e.g., Kwinana • Tank Farm"/></div><div class="field"><label>Asset ID / serial / tag</label><input id="assetId" type="text" placeholder="e.g., SHK-01492"/></div><div class="field"><label>Location / area</label><input id="location" type="text" placeholder="e.g., Laydown yard bay 3"/></div><div class="field"><label>Date (optional)</label><input id="inspDate" type="date"/></div><div class="field"><label>Job / work order (optional)</label><input id="workOrder" type="text" placeholder="e.g., WO-88214"/></div></div><div class="field" style="margin-top:6px"><label>Notes</label><textarea id="notes" placeholder="What did you observe? Measurements? Damage location? Actions taken?"></textarea></div><div class="actions"><button class="good" type="button" onclick="saveInspection('PASS')">PASS</button><button class="warn" type="button" onclick="saveInspection('QUARANTINE')">QUARANTINE</button><button class="bad" type="button" onclick="saveInspection('FAIL')">FAIL</button><button type="button" onclick="prefillFromLast()">Prefill from last</button></div><div class="hr"></div><div style="font-weight:700;margin-bottom:6px">Primary standards</div>${primary.length?primary.map(stdLine).join(""):`<div class="muted">None mapped yet.</div>`}<div style="font-weight:700;margin:12px 0 6px">Related standards</div>${related.length?related.map(stdLine).join(""):`<div class="muted">None.</div>`}<div class="hr"></div><div style="font-weight:700;margin-bottom:6px">Quick inspection prompts</div><ul style="margin:8px 0 0 18px">${(item.prompts||[]).map(p=>`<li>${p}</li>`).join("")}</ul><div class="hr"></div><div class="small">Synonyms: ${(item.synonyms||[]).map(s=>`<span class="kbd">${s}</span>`).join(" ")}</div>`;
 }
 
 function showStandard(st){
-  selectedItemId = null;
-  document.getElementById("selectedHint").textContent = "Standard selected";
-  const d = document.getElementById("details");
-  const mappedItems = ITEMS.filter(it => it.standards.some(m => m.sid === st.id)).sort((a,b) => a.name.localeCompare(b.name));
-  d.innerHTML = `
-    <div style="display:flex; gap:12px; align-items:center;">
-      <div class="icon">${iconSVG("default")}</div>
-      <div>
-        <div style="font-size:16px; font-weight:800;">${st.code}</div>
-        <div class="small">${st.title} • ${st.year} • ${st.status}</div>
-      </div>
-    </div>
-    <div class="hr"></div>
-    <div class="muted">${st.summary}</div>
-    <div class="hr"></div>
-    <div style="font-weight:700; margin-bottom:6px;">Mapped items</div>
-    ${mappedItems.length ? `
-      <div class="chips">
-        ${mappedItems.map(it => `<span class="chip" style="cursor:pointer" onclick="window.__showItem('${it.id}')">${it.name}</span>`).join("")}
-      </div>` : `<div class="muted">No items mapped yet.</div>`
-    }
-  `;
-  window.__showItem = (id) => {
-    const it = ITEM_BY_ID[id];
-    if (it) showItem(it);
-  };
+  selectedItemId=null; document.getElementById("selectedHint").textContent="Standard selected";
+  const d=document.getElementById("details"),mappedItems=ITEMS.filter(it=>it.standards.some(m=>m.sid===st.id)).sort((a,b)=>a.name.localeCompare(b.name));
+  d.innerHTML=`<div style="display:flex;gap:12px;align-items:center"><div class="icon">${iconSVG("default")}</div><div><div style="font-size:16px;font-weight:800">${st.code}</div><div class="small">${st.title} • ${st.year} • ${st.status}</div></div></div><div class="hr"></div><div class="muted">${st.summary}</div><div class="hr"></div><div style="font-weight:700;margin-bottom:6px">Mapped items</div>${mappedItems.length?`<div class="chips">${mappedItems.map(it=>`<span class="chip" style="cursor:pointer" onclick="window.__showItem('${it.id}')">${it.name}</span>`).join("")}</div>`:`<div class="muted">No items mapped yet.</div>`}`;
+  window.__showItem=(id)=>{const it=ITEM_BY_ID[id];if(it)showItem(it);};
 }
 
 function runSearch(){
-  const q = document.getElementById("q").value;
-  const items = itemSearch(q);
-  const standards = standardsSearch(q);
-  const combined = [...items, ...standards].sort((a,b) => b.score - a.score);
-  document.getElementById("count").textContent = q ? `${combined.length} match(es)` : `Showing all items (${combined.length})`;
-  renderResults(combined.slice(0, 50));
+  const q=document.getElementById("q").value,items=itemSearch(q),standards=standardsSearch(q),combined=[...items,...standards].sort((a,b)=>b.score-a.score);
+  document.getElementById("count").textContent=q?`${combined.length} match(es)`:`Showing all items (${combined.length})`;
+  renderResults(combined.slice(0,50));
 }
 
-/* ---------- Inspection actions ---------- */
 function saveInspection(status){
-  if (!selectedItemId){
-    alert("Select an item first.");
-    return;
-  }
-  const item = ITEM_BY_ID[selectedItemId];
-  if (!item){
-    alert("Selected item not found.");
-    return;
-  }
-
-  const inspectorName = (document.getElementById("inspectorName")?.value || "").trim();
-  const siteName = (document.getElementById("siteName")?.value || "").trim();
-  const assetId = (document.getElementById("assetId")?.value || "").trim();
-  const location = (document.getElementById("location")?.value || "").trim();
-  const inspDate = (document.getElementById("inspDate")?.value || "").trim();
-  const workOrder = (document.getElementById("workOrder")?.value || "").trim();
-  const notes = (document.getElementById("notes")?.value || "").trim();
-
-  const record = {
-    id: (crypto?.randomUUID ? crypto.randomUUID() : String(Date.now()) + "_" + Math.random().toString(16).slice(2)),
-    createdAt: nowISO(),
-    status,
-    itemId: item.id,
-    itemName: item.name,
-    category: item.category,
-    inspectorName,
-    siteName,
-    assetId,
-    location,
-    inspDate,
-    workOrder,
-    notes,
-    primaryStandards: item.standards.filter(s => s.rel === "primary").map(s => STANDARD_BY_ID[s.sid]?.code || s.sid),
-    relatedStandards: item.standards.filter(s => s.rel !== "primary").map(s => STANDARD_BY_ID[s.sid]?.code || s.sid),
+  if(!selectedItemId){alert("Select an item first.");return;}
+  const item=ITEM_BY_ID[selectedItemId]; if(!item){alert("Selected item not found.");return;}
+  const record={
+    id:(crypto?.randomUUID?crypto.randomUUID():String(Date.now())+"_"+Math.random().toString(16).slice(2)),
+    createdAt:nowISO(),status,itemId:item.id,itemName:item.name,category:item.category,
+    inspectorName:(document.getElementById("inspectorName")?.value||"").trim(),
+    siteName:(document.getElementById("siteName")?.value||"").trim(),
+    assetId:(document.getElementById("assetId")?.value||"").trim(),
+    location:(document.getElementById("location")?.value||"").trim(),
+    inspDate:(document.getElementById("inspDate")?.value||"").trim(),
+    workOrder:(document.getElementById("workOrder")?.value||"").trim(),
+    notes:(document.getElementById("notes")?.value||"").trim(),
+    primaryStandards:item.standards.filter(s=>s.rel==="primary").map(s=>STANDARD_BY_ID[s.sid]?.code||s.sid),
+    relatedStandards:item.standards.filter(s=>s.rel!=="primary").map(s=>STANDARD_BY_ID[s.sid]?.code||s.sid),
   };
-
-  const records = loadRecords();
-  records.unshift(record);
-  saveRecords(records);
-
-  renderHistory();
+  const records=loadRecords(); records.unshift(record); saveRecords(records); renderHistory();
   alert(`Saved: ${status} • ${item.name}`);
 }
 
 function prefillFromLast(){
-  if (!selectedItemId) return;
-  const records = loadRecords().filter(r => r.itemId === selectedItemId);
-  if (!records.length){
-    alert("No previous record for this item.");
-    return;
-  }
-  const last = records[0];
-  const set = (id, val) => { const el = document.getElementById(id); if (el) el.value = val || ""; };
-  set("inspectorName", last.inspectorName);
-  set("siteName", last.siteName);
-  set("assetId", last.assetId);
-  set("location", last.location);
-  set("inspDate", last.inspDate);
-  set("workOrder", last.workOrder);
-  set("notes", last.notes);
+  if(!selectedItemId)return;
+  const records=loadRecords().filter(r=>r.itemId===selectedItemId);
+  if(!records.length){alert("No previous record for this item.");return;}
+  const last=records[0],set=(id,val)=>{const el=document.getElementById(id);if(el)el.value=val||"";};
+  set("inspectorName",last.inspectorName); set("siteName",last.siteName); set("assetId",last.assetId);
+  set("location",last.location); set("inspDate",last.inspDate); set("workOrder",last.workOrder); set("notes",last.notes);
 }
 
-/* ---------- History view ---------- */
 function renderHistory(){
-  const list = document.getElementById("historyList");
-  const details = document.getElementById("historyDetails");
-  const records = loadRecords();
-
-  document.getElementById("historyCount").textContent = `${records.length} record(s)`;
-
-  list.innerHTML = "";
-  details.innerHTML = "Select a record to view details.";
-
-  if (!records.length){
-    list.innerHTML = `<div class="muted">No records yet. Go to Guide → select an item → PASS/QUARANTINE/FAIL.</div>`;
-    return;
-  }
-
-  for (const r of records){
-    const div = document.createElement("div");
-    div.className = "item";
-    div.tabIndex = 0;
-
-    const cls = statusClass(r.status);
-    div.innerHTML = `
-      <div class="historyRow">
-        <div>
-          <div class="name">${r.itemName}</div>
-          <div class="cat">${r.siteName || "—"} • ${r.assetId || "no asset ID"} • ${fmtLocal(r.createdAt)}</div>
-        </div>
-        <span class="statusPill ${cls}">${r.status}</span>
-      </div>
-      <div class="desc">${(r.notes || "").slice(0, 120)}${(r.notes || "").length > 120 ? "…" : ""}</div>
-    `;
-
-    const open = () => showRecord(r.id);
-    div.addEventListener("click", open);
-    div.addEventListener("keydown", (e) => { if (e.key === "Enter") open(); });
-    list.appendChild(div);
+  const list=document.getElementById("historyList"),details=document.getElementById("historyDetails"),records=loadRecords();
+  document.getElementById("historyCount").textContent=`${records.length} record(s)`;
+  list.innerHTML=""; details.innerHTML="Select a record to view details.";
+  if(!records.length){list.innerHTML=`<div class="muted">No records yet. Go to Guide → select an item → PASS/QUARANTINE/FAIL.</div>`;return;}
+  for(const r of records){
+    const div=document.createElement("div"); div.className="item"; div.tabIndex=0;
+    const cls=statusClass(r.status);
+    div.innerHTML=`<div class="historyRow"><div><div class="name">${r.itemName}</div><div class="cat">${r.siteName||"—"} • ${r.assetId||"no asset ID"} • ${fmtLocal(r.createdAt)}</div></div><span class="statusPill ${cls}">${r.status}</span></div><div class="desc">${(r.notes||"").slice(0,120)}${(r.notes||"").length>120?"…":""}</div>`;
+    const open=()=>showRecord(r.id); div.addEventListener("click",open); div.addEventListener("keydown",(e)=>{if(e.key==="Enter")open();}); list.appendChild(div);
   }
 }
 
 function showRecord(recordId){
-  const records = loadRecords();
-  const r = records.find(x => x.id === recordId);
-  const panel = document.getElementById("historyDetails");
-  if (!r){ panel.innerHTML = `<div class="muted">Record not found.</div>`; return; }
-
-  const cls = statusClass(r.status);
-  panel.innerHTML = `
-    <div class="sectionTitle">
-      <div>
-        <div style="font-size:16px; font-weight:800;">${r.itemName}</div>
-        <div class="small">${fmtLocal(r.createdAt)} • ${r.category}</div>
-      </div>
-      <span class="statusPill ${cls}">${r.status}</span>
-    </div>
-
-    <div class="hr"></div>
-
-    <div class="small"><b>Inspector:</b> ${r.inspectorName || "—"}</div>
-    <div class="small"><b>Site/Client:</b> ${r.siteName || "—"}</div>
-    <div class="small"><b>Asset ID:</b> ${r.assetId || "—"}</div>
-    <div class="small"><b>Location:</b> ${r.location || "—"}</div>
-    <div class="small"><b>Date (entered):</b> ${r.inspDate || "—"}</div>
-    <div class="small"><b>Work order:</b> ${r.workOrder || "—"}</div>
-
-    <div class="hr"></div>
-    <div style="font-weight:700;">Notes</div>
-    <div class="muted" style="white-space: pre-wrap; margin-top:6px;">${r.notes || "—"}</div>
-
-    <div class="hr"></div>
-    <div style="font-weight:700;">Standards snapshot</div>
-    <div class="chips" style="margin-top:8px;">
-      ${(r.primaryStandards || []).map(s => `<span class="chip">${s}</span>`).join("")}
-      ${(r.relatedStandards || []).map(s => `<span class="chip secondary">${s}</span>`).join("")}
-    </div>
-
-    <div class="hr"></div>
-    <div class="actions">
-      <button class="bad" type="button" onclick="deleteRecord('${r.id}')">Delete record</button>
-    </div>
-  `;
+  const records=loadRecords(),r=records.find(x=>x.id===recordId),panel=document.getElementById("historyDetails");
+  if(!r){panel.innerHTML=`<div class="muted">Record not found.</div>`;return;}
+  const cls=statusClass(r.status);
+  panel.innerHTML=`<div class="sectionTitle"><div><div style="font-size:16px;font-weight:800">${r.itemName}</div><div class="small">${fmtLocal(r.createdAt)} • ${r.category}</div></div><span class="statusPill ${cls}">${r.status}</span></div><div class="hr"></div><div class="small"><b>Inspector:</b> ${r.inspectorName||"—"}</div><div class="small"><b>Site/Client:</b> ${r.siteName||"—"}</div><div class="small"><b>Asset ID:</b> ${r.assetId||"—"}</div><div class="small"><b>Location:</b> ${r.location||"—"}</div><div class="small"><b>Date (entered):</b> ${r.inspDate||"—"}</div><div class="small"><b>Work order:</b> ${r.workOrder||"—"}</div><div class="hr"></div><div style="font-weight:700">Notes</div><div class="muted" style="white-space:pre-wrap;margin-top:6px">${r.notes||"—"}</div><div class="hr"></div><div style="font-weight:700">Standards snapshot</div><div class="chips" style="margin-top:8px">${(r.primaryStandards||[]).map(s=>`<span class="chip">${s}</span>`).join("")}${(r.relatedStandards||[]).map(s=>`<span class="chip secondary">${s}</span>`).join("")}</div><div class="hr"></div><div class="actions"><button class="bad" type="button" onclick="deleteRecord('${r.id}')">Delete record</button></div>`;
 }
 
 function deleteRecord(recordId){
-  const records = loadRecords();
-  const next = records.filter(r => r.id !== recordId);
-  saveRecords(next);
-  renderHistory();
-  document.getElementById("historyDetails").innerHTML = "Select a record to view details.";
+  const records=loadRecords(),next=records.filter(r=>r.id!==recordId); saveRecords(next); renderHistory();
+  document.getElementById("historyDetails").innerHTML="Select a record to view details.";
 }
 
 function exportCSV(){
-  const records = loadRecords();
-  if (!records.length){
-    alert("No records to export.");
-    return;
-  }
-  const headers = [
-    "createdAt","status","itemName","category","inspectorName","siteName","assetId","location","inspDate","workOrder","notes","primaryStandards","relatedStandards"
-  ];
-  const lines = [headers.join(",")];
-  for (const r of records){
-    const row = [
-      r.createdAt, r.status, r.itemName, r.category, r.inspectorName, r.siteName, r.assetId,
-      r.location, r.inspDate, r.workOrder, r.notes,
-      (r.primaryStandards||[]).join("; "),
-      (r.relatedStandards||[]).join("; "),
-    ].map(escapeCSV);
-    lines.push(row.join(","));
-  }
-  const csv = lines.join("\n");
-  const blob = new Blob([csv], { type:"text/csv;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `scotia_inspections_${new Date().toISOString().slice(0,10)}.csv`;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(url);
+  const records=loadRecords(); if(!records.length){alert("No records to export.");return;}
+  const headers=["createdAt","status","itemName","category","inspectorName","siteName","assetId","location","inspDate","workOrder","notes","primaryStandards","relatedStandards"];
+  const lines=[headers.join(",")];
+  for(const r of records){lines.push([r.createdAt,r.status,r.itemName,r.category,r.inspectorName,r.siteName,r.assetId,r.location,r.inspDate,r.workOrder,r.notes,(r.primaryStandards||[]).join("; "),(r.relatedStandards||[]).join("; ")].map(escapeCSV).join(","));}
+  const csv=lines.join("\n"),blob=new Blob([csv],{type:"text/csv;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");
+  a.href=url; a.download=`exodrill_inspections_${new Date().toISOString().slice(0,10)}.csv`; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
 }
 
 function clearAllHistory(){
-  if (!confirm("Delete ALL inspection history from this device?")) return;
-  localStorage.removeItem(STORAGE_KEY);
-  renderHistory();
-  document.getElementById("historyDetails").innerHTML = "Select a record to view details.";
+  if(!confirm("Delete ALL inspection history from this device?"))return;
+  localStorage.removeItem(STORAGE_KEY); renderHistory();
+  document.getElementById("historyDetails").innerHTML="Select a record to view details.";
 }
 
-/* ---------- Tabs ---------- */
 function setTab(tab){
-  const guide = document.getElementById("guideView");
-  const hist = document.getElementById("historyView");
-  const tGuide = document.getElementById("tabGuide");
-  const tHist = document.getElementById("tabHistory");
-
-  if (tab === "history"){
-    guide.style.display = "none";
-    hist.style.display = "";
-    tGuide.classList.remove("active");
-    tHist.classList.add("active");
-    renderHistory();
-  } else {
-    hist.style.display = "none";
-    guide.style.display = "";
-    tHist.classList.remove("active");
-    tGuide.classList.add("active");
-  }
+  const guide=document.getElementById("guideView"),hist=document.getElementById("historyView"),tGuide=document.getElementById("tabGuide"),tHist=document.getElementById("tabHistory");
+  if(tab==="history"){guide.style.display="none";hist.style.display="";tGuide.classList.remove("active");tHist.classList.add("active");renderHistory();}
+  else{hist.style.display="none";guide.style.display="";tHist.classList.remove("active");tGuide.classList.add("active");}
 }
 
-/* ---------- Wire up ---------- */
-document.getElementById("q").addEventListener("input", runSearch);
-document.getElementById("clearBtn").addEventListener("click", () => {
-  document.getElementById("q").value = "";
-  selectedItemId = null;
-  document.getElementById("selectedHint").textContent = "Select an item";
-  document.getElementById("details").innerHTML =
-    `Select a result to see mapped standards and quick prompts. You can also create an inspection record.`;
-  runSearch();
-});
-document.getElementById("demoBtn").addEventListener("click", () => {
-  const demos = ["shackle","AS/NZS 2741","round sling","spreader beam","MEWP","chain sling","eyebolt"];
-  document.getElementById("q").value = demos[Math.floor(Math.random()*demos.length)];
-  runSearch();
-});
-document.getElementById("exportBtn").addEventListener("click", exportCSV);
-document.getElementById("clearHistoryBtn").addEventListener("click", clearAllHistory);
-document.getElementById("tabGuide").addEventListener("click", () => setTab("guide"));
-document.getElementById("tabHistory").addEventListener("click", () => setTab("history"));
+document.getElementById("q").addEventListener("input",runSearch);
+document.getElementById("clearBtn").addEventListener("click",()=>{document.getElementById("q").value="";selectedItemId=null;document.getElementById("selectedHint").textContent="Select an item";document.getElementById("details").innerHTML=`Select a result to see mapped standards and quick prompts. You can also create an inspection record.`;runSearch();});
+document.getElementById("demoBtn").addEventListener("click",()=>{const demos=["shackle","AS/NZS 2741","round sling","spreader beam","MEWP","chain sling","eyebolt"];document.getElementById("q").value=demos[Math.floor(Math.random()*demos.length)];runSearch();});
+document.getElementById("exportBtn").addEventListener("click",exportCSV);
+document.getElementById("clearHistoryBtn").addEventListener("click",clearAllHistory);
+document.getElementById("tabGuide").addEventListener("click",()=>setTab("guide"));
+document.getElementById("tabHistory").addEventListener("click",()=>setTab("history"));
 
-/* initial */
 runSearch();
 renderHistory();
-
-window.saveInspection = saveInspection;
-window.prefillFromLast = prefillFromLast;
-window.deleteRecord = deleteRecord;
+window.saveInspection=saveInspection;
+window.prefillFromLast=prefillFromLast;
+window.deleteRecord=deleteRecord;
 </script>
 
-<!-- ✅ SERVICE WORKER REGISTRATION (ADD THIS) -->
 <script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("./sw.js").catch(console.error);
-    });
+  if("serviceWorker" in navigator){
+    window.addEventListener("load",()=>{navigator.serviceWorker.register("./sw.js").catch(console.error);});
   }
 </script>
-
 </body>
 </html>
